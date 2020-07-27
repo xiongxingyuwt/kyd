@@ -1,10 +1,15 @@
 <script>
 export default {
 	onLaunch: function() {
+		uni.getSystemInfo({
+			success:(res)=>{
+				console.log(res)
+			}
+		})
 		console.log('App Launch');
 	},
 	onShow: function() {
-		console.log('App Show');
+		console.log('App show');
 	},
 	onHide: function() {
 		console.log('App Hide');
