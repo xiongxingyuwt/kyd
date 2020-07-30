@@ -105,5 +105,6 @@
 		width: 100%;
 		height: 9000px;
 		background-color: #FAECD8;
+		
 	}
 </style>
