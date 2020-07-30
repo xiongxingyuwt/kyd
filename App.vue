@@ -1,11 +1,6 @@
 <script>
 export default {
 	onLaunch: function() {
-		uni.getSystemInfo({
-			success:(res)=>{
-				console.log(res)
-			}
-		})
 		console.log('App Launch');
 	},
 	onShow: function() {

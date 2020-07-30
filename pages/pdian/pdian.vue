@@ -1,5 +1,6 @@
 <template>
-	<view class="container">
+	<view>
+		
 	</view>
 </template>
 
@@ -11,10 +12,11 @@
 			}
 		},
 		methods: {
-
+			
 		}
 	}
 </script>
 
 <style>
+
 </style>

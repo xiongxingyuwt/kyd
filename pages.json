@@ -1,21 +1,21 @@
 {
-	"pages": [{
-		"path": "pages/index/index",
-		"style": {
-			}
-		},
+	"pages": [
 		{
-            "path" : "pages/classtify/classtify",
+            "path" : "pages/xjing/xjing",
             "style" : {
 				"navigationStyle":"custom"
 			}
-        }
-        ,{
-            "path" : "pages/goodscar/goodscar",
+        },
+		{
+            "path" : "pages/pdian/pdian",
             "style" : {}
-        }
-        ,{
-            "path" : "pages/myself/myself",
+        },
+		{
+            "path" : "pages/ychang/ychang",
+            "style" : {}
+        },
+		{
+            "path" : "pages/wosheng/wosheng",
             "style" : {}
         }
     ],
@@ -37,20 +37,20 @@
 		},
 		"list":[
 			{
-				"pagePath":"pages/index/index",
-				"text":"首页"
+				"pagePath":"pages/xjing/xjing",
+				"text":"花间"
 			},
 			{
-				"pagePath":"pages/classtify/classtify",
-				"text":"分类"
+				"pagePath":"pages/pdian/pdian",
+				"text":"评点"
 			},
 			{
-				"pagePath":"pages/goodscar/goodscar",
-				"text":"购物车"
+				"pagePath":"pages/ychang/ychang",
+				"text":"花朝"
 			},
 			{
-				"pagePath":"pages/myself/myself",
-				"text":"我的"
+				"pagePath":"pages/wusheng/wusheng",
+				"text":"我"
 			}
 		]
 	}
