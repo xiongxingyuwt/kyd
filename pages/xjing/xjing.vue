@@ -13,15 +13,16 @@
 				</view>
 			</view>
 		</view>
-		<view class="navs_box">
+		<view class="navs_box frowsa" v-bind:class="{'postfix':postfix}">
 			<view class="nav_item" v-for="(item,index) in navlists" :key="index" @click="item.linkto">
 				<view class="navico"><image class="icoimg" :src="item.icopath"></image></view>
 				<view class="nitemname"><text>{{item.tname}}</text></view>
 			</view>
 		</view>
-		<view class="content_box">
+		<view class="content_box" :style="'padding-top:'+ paddingtp +'px;'">
 			<text>cjdgudf</text>
 		</view>
+		<image src="/static/image/wem.jpg" mode=""></image>
 	</view>
 </template>
 
@@ -29,38 +30,42 @@
 	export default {
 		data() {
 			return {
+				paddingtp : 0,
+				postfix:false,
+				screenHeight: this.$hdev,	 //屏幕高度
+				isLoading: false, 	//防止频繁触发
 				navlists:[
 					{
 						tname:'景点',
-						icopath:'',
+						icopath:'/static/image/wem.jpg',
 						linkto:function(){
 							console.log('跳转方法...')
 						}
 					},
 					{
 						tname:'文章',
-						icopath:'',
+						icopath:'/static/image/wem.jpg',
 						linkto:function(){
 							console.log('跳转方法...')
 						}
 					},
 					{
 						tname:'话题',
-						icopath:'',
+						icopath:'/static/image/wem.jpg',
 						linkto:function(){
 							console.log('跳转方法...')
 						}
 					},
 					{
 						tname:'点评',
-						icopath:'',
+						icopath:'/static/image/wem.jpg',
 						linkto:function(){
 							console.log('跳转方法...')
 						}
 					},
 					{
 						tname:'拜访',
-						icopath:'',
+						icopath:'/static/image/wem.jpg',
 						linkto:function(){
 							console.log('跳转方法...')
 						}
@@ -70,7 +75,24 @@
 		},
 		methods: {
 			
-		}
+		},
+		onPageScroll: function(e) {
+						//防止重复触发
+						if(this.isLoading){
+							return;
+						}
+						const query = uni.createSelectorQuery().in(this);
+						query.select('.xjing_banner').boundingClientRect(data => {
+							const { height } = data
+							const { top } = data
+							if(top <= -412){
+								this.postfix = true
+							} else{
+								this.postfix = false
+								this.paddingtp = 0
+							}
+						}).exec();
+					}
 	}
 </script>
 
@@ -96,14 +118,16 @@
 		top: 0;
 		left: 0;
 		z-index: 999;
+		background-color: #fff;
 	}
 	.nav_item{
-		display: inline-block;
-		margin:0 38rpx ;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
 	}
 	.content_box{
 		width: 100%;
-		height: 9000px;
 		background-color: #FAECD8;
 		
 	}
