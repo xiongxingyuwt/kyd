@@ -1,5 +1,5 @@
 <template>
-	<view class="xiejing">
+	<view class="xiejing" style="height: 9000px;">
 		<view class="hodes" :style="'height:'+ this.$hdev +';'"></view>
 		<view class="xjing_banner">
 			<view class="container">
@@ -19,10 +19,9 @@
 				<view class="nitemname"><text>{{item.tname}}</text></view>
 			</view>
 		</view>
-		<view class="content_box" :style="'padding-top:'+ paddingtp +'px;'">
-			<text>cjdgudf</text>
+		<view class="content_box" :style="'padding-top:'+ 5 +'px;'">
+			<image src="/static/image/wem.jpg" mode=""></image>
 		</view>
-		<image src="/static/image/wem.jpg" mode=""></image>
 	</view>
 </template>
 
@@ -85,7 +84,7 @@
 						query.select('.xjing_banner').boundingClientRect(data => {
 							const { height } = data
 							const { top } = data
-							if(top <= -412){
+							if(top <= -412/2){
 								this.postfix = true
 							} else{
 								this.postfix = false
@@ -111,24 +110,26 @@
 	.xjing_banner{
 		width: 100%;
 		height: 400rpx;
-		background-color: #E1F3D8;
+		background-image: url(/static/image/wem.jpg);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
 	}
 	.navs_box.postfix{
+		width: 100%;
 		position: fixed;
 		top: 0;
 		left: 0;
 		z-index: 999;
 		background-color: #fff;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
 	}
 	.nav_item{
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
 		align-items: center;
-	}
-	.content_box{
-		width: 100%;
-		background-color: #FAECD8;
-		
 	}
 </style>

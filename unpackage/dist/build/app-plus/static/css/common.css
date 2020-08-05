@@ -1,0 +1,16 @@
+.icoimg{
+	width: 32rpx;
+	height: 32rpx;
+}
+.frowsa{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+.fclomc{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
